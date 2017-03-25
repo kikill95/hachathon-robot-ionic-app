@@ -1,35 +1,51 @@
 <ion-content padding>
-  <ion-select [(ngModel)]="user" (ngModelChange)="changeUser($event)">
-    <ion-option value="cheb_">Cheb</ion-option>
-    <ion-option value="gary_">Gary</ion-option>
-    <ion-option value="kirill_">Kirill</ion-option>
-  </ion-select>
-  <ion-range
-    [(ngModel)]="left"
-    (ngModelChange)="onChange('motor_l', $event)"
-    min="-1024"
-    max="1024"
-    step="1"
-    class="vertical"
-  >
-  </ion-range>
-  <button ion-button (click)="onFire()">Fire</button>
-  <ion-range
-    [(ngModel)]="servo"
-    (ngModelChange)="onChange('servo', $event)"
-    min="0"
-    max="180"
-    step="1"
-    class="servo"
-  >
-  </ion-range>
-  <ion-range
-    [(ngModel)]="right"
-    (ngModelChange)="onChange('motor_r', $event)"
-    min="-1024"
-    max="1024"
-    step="1"
-    class="vertical"
-  >
-  </ion-range>
+  <ion-item>
+    <ion-select [(ngModel)]="user" (ngModelChange)="changeUser($event)">
+      <ion-option value="cheb_">Cheb</ion-option>
+      <ion-option value="gary_">Gary</ion-option>
+      <ion-option value="kirill_">Kirill</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Left</ion-label>
+    <ion-range
+      [(ngModel)]="left"
+      (ngModelChange)="onChange('motor_l', $event)"
+      min="-1023"
+      max="1023"
+      step="1"
+      debounce="20"
+      class="vertical"
+    >
+    </ion-range>
+  </ion-item>
+  <ion-item class="fire">
+    <button ion-button (click)="onFire()">Fire</button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Servo</ion-label>
+    <ion-range
+      [(ngModel)]="servo"
+      (ngModelChange)="onChange('servo', $event)"
+      min="0"
+      max="180"
+      step="1"
+      debounce="20"
+      class="servo"
+    >
+    </ion-range>
+  </ion-item>
+  <ion-item>
+    <ion-label>Right</ion-label>
+    <ion-range
+      [(ngModel)]="right"
+      (ngModelChange)="onChange('motor_r', $event)"
+      min="-1023"
+      max="1023"
+      step="1"
+      debounce="20"
+      class="vertical"
+    >
+    </ion-range>
+  </ion-item>
 </ion-content>
