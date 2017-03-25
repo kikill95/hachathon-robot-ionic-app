@@ -1,12 +1,12 @@
 <ion-content padding>
   <ion-select [(ngModel)]="user" (ngModelChange)="changeUser($event)">
-    <ion-option value="Cheb">Cheb</ion-option>
-    <ion-option value="Gary">Gary</ion-option>
-    <ion-option value="Kirill">Kirill</ion-option>
+    <ion-option value="cheb_">Cheb</ion-option>
+    <ion-option value="gary_">Gary</ion-option>
+    <ion-option value="kirill_">Kirill</ion-option>
   </ion-select>
   <ion-range
     [(ngModel)]="left"
-    (ngModelChange)="onChange('left', $event)"
+    (ngModelChange)="onChange('motor_l', $event)"
     min="-1024"
     max="1024"
     step="1"
@@ -25,7 +25,7 @@
   </ion-range>
   <ion-range
     [(ngModel)]="right"
-    (ngModelChange)="onChange('right', $event)"
+    (ngModelChange)="onChange('motor_r', $event)"
     min="-1024"
     max="1024"
     step="1"
